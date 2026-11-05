@@ -1,0 +1,79 @@
+{
+    "kind": "collectionType",
+    "collectionName": "services",
+    "info": {
+        "singularName": "service",
+        "pluralName": "services",
+        "displayName": "Service"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "body": {
+            "type": "text"
+        },
+        "canonicalPath": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "category": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::service-category.service-category",
+            "inversedBy": "services"
+        },
+        "disease_categories": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::disease-category.disease-category",
+            "inversedBy": "services"
+        },
+        "url_mappings": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::url-mapping.url-mapping",
+            "mappedBy": "service"
+        },
+        "modxId": {
+            "type": "integer",
+            "unique": true,
+            "private": true
+        },
+        "_migrationContentHash": {
+            "type": "string",
+            "maxLength": 64,
+            "private": true
+        },
+        "needs_review": {
+            "type": "boolean",
+            "default": false,
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "seo": {
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.seo",
+            "required": false,
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        }
+    }
+}

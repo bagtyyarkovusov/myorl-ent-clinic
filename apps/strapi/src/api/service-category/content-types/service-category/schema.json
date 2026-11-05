@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_categories",
+  "info": {
+    "singularName": "service-category",
+    "pluralName": "service-categories",
+    "displayName": "Service Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "canonicalPath": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service",
+      "mappedBy": "category"
+    },
+    "url_mappings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::url-mapping.url-mapping",
+      "mappedBy": "service_category"
+    },
+    "modxId": {
+      "type": "integer",
+      "unique": true,
+      "private": true
+    },
+    "_migrationContentHash": {
+      "type": "string",
+      "maxLength": 64,
+      "private": true
+    },
+    "needs_review": {
+      "type": "boolean",
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

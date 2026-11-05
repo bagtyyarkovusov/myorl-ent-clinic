@@ -1,0 +1,39 @@
+{
+  "summary": {
+    "total": 367,
+    "pages": 316,
+    "diseaseCategories": 2,
+    "diseases": 17,
+    "serviceCategories": 2,
+    "services": 4,
+    "skipped": 22,
+    "errors": 0,
+    "collisions": 4
+  },
+  "details": [
+    {
+      "id": "410",
+      "title": "Ατρησία ρινικής χοάνης",
+      "status": "collision",
+      "path": "atrisia"
+    },
+    {
+      "id": "411",
+      "title": "Ατρησία ρινικής χοάνης",
+      "status": "collision",
+      "path": "atrisia"
+    },
+    {
+      "id": "364",
+      "title": "Αφαίρεση υπογνάθιου αδένα",
+      "status": "collision",
+      "path": "ypognathios-adenas"
+    },
+    {
+      "id": "325",
+      "title": "Подтяжка бровей - Подтяжка лба",
+      "status": "collision",
+      "path": "endoskopiki-facelift-browlift"
+    }
+  ]
+}

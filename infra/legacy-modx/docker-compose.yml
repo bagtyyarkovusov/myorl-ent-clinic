@@ -1,0 +1,28 @@
+services:
+  modx-mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: legacy-modx-mysql
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: modx
+      MYSQL_DATABASE: modx
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "3307:3306"
+    volumes:
+      - ../../ce39229_myorl.sql:/docker-entrypoint-initdb.d/01-dump.sql:ro
+      - modx-mysql-data:/var/lib/mysql
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --sql-mode=""
+      --max-allowed-packet=64M
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-pmodx"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  modx-mysql-data:

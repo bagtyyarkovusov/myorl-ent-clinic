@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+plans/modx-extract.json
+plans/migration-reports/
+public_html3/
+*.sqlite
+*.sqlite-journal

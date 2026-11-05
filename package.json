@@ -1,0 +1,21 @@
+{
+  "name": "myorl-migrate",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "pnpm": {
+    "overrides": {
+      "is-generator-function": "1.1.0"
+    }
+  },
+  "scripts": {
+    "dev:strapi": "pnpm --filter @myorl/strapi develop",
+    "dev:web": "pnpm --filter @myorl/web dev",
+    "build:strapi": "pnpm --filter @myorl/strapi build",
+    "build:web": "pnpm --filter @myorl/web build",
+    "start:strapi": "pnpm --filter @myorl/strapi start",
+    "start:web": "pnpm --filter @myorl/web start",
+    "test": "pnpm -r --if-present test",
+    "test:web": "pnpm --filter @myorl/web test",
+    "test:strapi": "pnpm --filter @myorl/strapi test"
+  }
+}
